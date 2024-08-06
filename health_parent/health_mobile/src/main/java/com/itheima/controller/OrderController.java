@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.aliyuncs.exceptions.ClientException;
 import com.itheima.constant.MessageConstant;
 import com.itheima.constant.RedisMessageConstant;
@@ -20,7 +21,7 @@ import static com.itheima.pojo.Order.ORDERTYPE_WEIXIN;
 @RestController
 @RequestMapping("/order")
 public class OrderController {
-    @Autowired
+  @Reference
     private OrderService orderService;
     @Autowired
     private JedisPool jedisPool;

@@ -2,14 +2,15 @@
     <!-- 数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="username" value="root"/>
-        <property name="password" value="root"/>
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/itcast_health"/>
+        <property name="password" value="hsp"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/itcast_health?useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;characterEncoding=utf-8&amp;autoReconnect=true"/>
     </bean>
+
     <!-- spring和mybatis整合的工厂bean -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:SqlMapConfig.xml"/>
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
     </bean>
     <!-- 批量扫描接口生成代理对象 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

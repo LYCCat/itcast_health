@@ -19,7 +19,7 @@
     <!--指定服务注册中心地址-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <!--批量扫描，发布服务-->
-    <dubbo:annotation package="com.itheima.service"/>
+    <dubbo:annotation package="com.itheima.serviceimpl"/>
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <!-- 指定模板文件所在目录 -->
         <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>

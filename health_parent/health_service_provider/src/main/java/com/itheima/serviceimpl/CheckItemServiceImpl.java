@@ -26,7 +26,6 @@ public class CheckItemServiceImpl implements CheckItemService {
 
     @Override
     public PageResult findPage(int curPage,int pageSize,String queryString) {
-
         PageHelper.startPage(curPage,pageSize);
         Page<CheckItem>page = checkItemDao.findPage(queryString);
         PageResult pageResult=new PageResult(page.getTotal(),page.getResult());
